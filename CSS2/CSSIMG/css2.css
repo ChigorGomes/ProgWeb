@@ -1,0 +1,28 @@
+body{
+	background-color: #BFEFFF;
+	background-image: url(roma.jpg);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+	
+}
+h1{
+	font-size: 28px;
+	text-align: center; 
+	font-family: sans-serif;
+}
+div{
+	
+	border: 10px solid rgba(140, 64, 18, 0.3);
+	background-color: rgba(255, 239, 255, 0.6);
+	position: 10px 10px;
+	margin: 90px 150px;
+	width: 20%;
+	border-radius: 25px 25px 25px 25px;
+	padding: 20px;
+	
+}
+p{
+	text-align: center;
+	font-family: sans-serif;
+}
