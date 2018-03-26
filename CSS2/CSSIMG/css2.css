@@ -20,6 +20,7 @@ div{
 	width: 23%;
 	border-radius: 25px 25px 25px 25px;
 	padding: 20px;
+	box-shadow: 4px 4px 10px 2px gray;
 	
 }
 p{
