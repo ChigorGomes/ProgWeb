@@ -1,0 +1,31 @@
+.tabela1{
+    float: left;
+    border-style: double;
+    margin: 2px 20px 30px 100px;
+    width: 113px;
+    font-size: 19px;
+    text-align: center;
+    
+
+
+} 
+.tabela2{
+    float: left;
+    border-style: double;
+    margin: -19px 20px 30px 100px;
+    width: 113px;
+    font-size: 17px;
+    text-align: center;
+}
+
+th{
+    border-style: double;
+    font-size: 17px;
+    text-align: left;
+
+    
+}
+td{
+    border-style: double;
+    text-align: center;
+}
