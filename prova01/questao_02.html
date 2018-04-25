@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>2ª Questão</title>
+
+    <style>
+        label{
+            display: inline-block;
+            width: 100px;
+            padding: 4px;
+        }
+    </style>
+
+</head>
+<body>
+    <form>
+        <label>Raio da Esfera</label>
+            <input type="text" id="raio">
+            <input type="button" value="Calcular!" id="calcular"><br>
+
+        <!-- Para o usuário não colocar nenhum valor tanto na (area,volume) decidi usar o disabled assim, evita problemas-->
+        <label>Área</label>
+            <input type="text" id="area" disabled><br> 
+
+        <label>Volume</label>
+            <input type="text" id="volume" disabled>        
+    </form>
+    
+    <script>
+        (function(){
+            var botao= document.getElementById("calcular");
+            var raio= document.getElementById("raio");
+            var area= document.getElementById("area");
+            var volume= document.getElementById("volume");
+
+            onclick= function(){
+                var calculaArea= 4*(Math.PI* Math.pow(raio.value,2));
+                var calculaVolume= 4/3*(Math.PI* Math.pow(raio.value,3));
+
+                area.value= calculaArea.toFixed(2);
+                volume.value= calculaVolume.toFixed(2);
+            }
+            
+        })();
+    </script>
+</body>
+</html>

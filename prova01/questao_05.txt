@@ -1,0 +1,4 @@
+a) o comando git status serve para identificar o estado do repositório local.
+
+b)o arquivo .gitignore serve para ser ignorado quando os arquivos forem selecionados para o diretório, esse arquivo 
+não será commitado.

@@ -1,0 +1,28 @@
+1ºErro
+
+--- linha 04 " /*Isto é um comentário e não deve aparecer na página*/ " 
+
+Esse é um erro, pois um comentário em html é usado pela tag <!-- -->, esse tipo de comentário (/* */) é usado em CSS e javascript.
+Ou seja, ficaria:
+
+<!--Isto é um comentário e não deve aparecer na página -->
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+2º e 3º Erro
+-- linha 08 e linha 09 " color=red; background-color=blue; "
+Não existe a atribuição de igual "=" em CSS, para atribuimos um valor devemos usar ":" . Ou seja, ficaria:
+
+color: red;
+background-color: blue;
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+4 º Erro 
+-- linha 25 " return that.nome; "
+ Não existe o comando that, para retornar o nome, devemos utilizar o this. Ou seja, ficaria:
+
+return this.nome;
+
+
+

@@ -1,0 +1,12 @@
+hoisting é quando eu tenho acesso ao conteúdo de uma váriavel antes  que ela seja declarada.
+O javascript permite isso no exemplo abaixo ele mostra o valor 1 dá variável antes que ela seja declarada logo abaixo
+
+
+function a (){
+    console.log(a);//1
+    var a=1;
+    function b(){
+      return 10;
+    }   
+} 
+
