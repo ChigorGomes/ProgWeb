@@ -1,40 +1,136 @@
-.para-direita {
-   background-image: url(skier.png);
-   background-position: -25px -6px;
-   width: 22px;
-   height: 28px;
-}
-
-.para-esquerda {
-   background-image: url(skier.png);
-   background-position: -26px -43px;
-   width: 22px;
-   height: 28px;
-}
-
-.para-frente {
-   background-image: url(skier.png);
-   background-position: -67px -2px;
-   width: 15px;
-   height: 32px;
-}
-
-.arvore {
-   background-image: url(obstacles.png);
-   background-position: -0px -31px;   
-   width: 28px;
-   height: 32px;   
-   position: absolute;
-}
-
-#montanha {
-   border: 1px solid black;
-   position: relative;
-   overflow: hidden;
-}
 
 #skier {
-   position: absolute;
+    position: absolute;
+ }
+
+.para-direita {
+background-image: url(skier.png);
+background-position: -25px -6px;
+width: 22px;
+height: 28px;
+}
+.para-esquerda {
+background-image: url(skier.png);
+background-position: -26px -43px;
+width: 22px;
+height: 28px;
+}
+.para-frente {
+background-image: url(skier.png);
+background-position: -67px -2px;
+width: 15px;
+height: 32px;
+}
+#monstro{
+
+    position: relative;
+  
+
+}
+.frente{
+
+    background-image: url(skier.png);
+    background-position: -32px -112px; 
+    width: 30px;
+    height: 43px;
+
+
+}
+.direita{
+
+
+    background-image: url(skier.png);
+    background-position: -63px -112px; 
+    width: 28px;
+    height: 43px;
+
+}
+.esquerda{
+
+
+    background-image: url(skier.png);
+    background-position: -63px -158px; 
+    width: 30px;
+    height: 43px;
+
+}
+#placar{
+
+    border: 1px solid black;
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    top: 10px;
+    left: 320px;
+    background-color: transparent;
+    box-shadow: 2px 2px 2px 2px black;
+    
+}
+#montanha {
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+    
 }
 
+.arvore{
+background-image: url(obstacles.png);
+background-position: -0px -31px;   
+
+position: absolute;
+}
+.chama{
+    background-image: url(obstacles.png);
+    background-position: -48px -102px;  
+    position: absolute;
+}
+
+.toco{
+    background-image: url(obstacles.png);
+    background-position: -251px -50px;   
+
+    position: absolute;
+}
+.rocha{
+    background-image: url(obstacles.png);
+    background-position: -29px -50px;   
+
+    position: absolute;
+}
+
+
+.arvoregrande{
+
+    background-image: url(obstacles.png);
+    background-position: -96px -66px;   
+    width: 33px;
+    height: 64px;   
+    position: absolute;
+
+}
+
+.cachorro{
+background-image: url(skier.png);
+    background-position: -21px -204px;   
+    width: 25px;
+    height: 19px;   
+    position: absolute;
+}
+
+.cogumelo{
+    background-image: url(obstacles.png);
+    background-position: -270px -51px;   
+    width: 10px;
+    height: 12px;   
+    position: absolute;
+}
+
+.gameover{
+    background-image: url(skier.png);
+    background-position: -241px -2px;   
+    width: 32px;
+    height: 32px;   
+    position: absolute;
+
+}
 
