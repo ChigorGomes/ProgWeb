@@ -25,14 +25,17 @@
     metros = Metros()(parseInt(gameLoop));
   }
 
+//Função que conta os metros
   function Metros() {
     metros;
     return function (x) {
       metros += x;
       return metros;
     }
+    
   }
 
+ //Função que cria o placar no jogo 
   function Placar(metros) {
     placar = document.querySelector("#placar");
     var txtMetros = document.createTextNode("Metros:");
@@ -116,6 +119,8 @@
     }
   }
 
+
+//Função que cria um vetor que passa como parametro o nome da classe e o suas propriedades CSS
   function criaObstaculos(nomeClasse, xwidth, xheight) {
     this.element = document.createElement('div');
     montanha.element.appendChild(this.element);
@@ -127,18 +132,20 @@
     this.element.style.height = xheight + 'px';
   }
 
+//Função que cria o cogumelo com a probabilidade menor. Decidimos colocar esse cogumelo dentro do vetor de obstaculos.
   function ganhaVida() {
     var random = Math.floor(Math.random() * 7000); //1000
-    if (random < PROB_OBSTACULOS ) {
+    if (random < PROB_OBSTACULOS) {
       obstaculo = new criaObstaculos('cogumelo', 10, 12);
       vetorObstaculos.push(obstaculo);
     }
   }
 
+//Função que cria os obstaculos aleatoriamente, pega cada obstaculo e joga em um vetor 
   function randomCriaObstaculos() {
-    var random = Math.floor(Math.random() * 400); //1000
-    if (random <= PROB_OBSTACULOS * 3) { //10
-      var randomObstaculos = parseInt(Math.floor(Math.random() * 5) + 1); //10
+    var random = Math.floor(Math.random() * 400); 
+    if (random <= PROB_OBSTACULOS ) { 
+      var randomObstaculos = parseInt(Math.floor(Math.random() * 5) + 1); 
       switch (randomObstaculos) {
         case 1:
           obstaculo = new criaObstaculos('arvore', 28, 32); // Criando Arvore
@@ -164,15 +171,24 @@
     }
   }
 
+//Função que verifica se o skier ainda possui vida, caso não possue aparece uma mensagem de gameover  
   function verificaVida() {
     if (vidas <= 0) {
-      //setTimeout(function () { skier.element.className = 'gameover'; }, 5);
       skier.element.className = 'gameover';
-      setTimeout(function () { condicao = window.confirm("você deseja recomeçar o jogo?"); if (condicao) location.reload(); }, 100);
+     // setTimeout(function () { condicao = window.confirm("você perdeu, sua pontuação foi: " + metros);if(condicao==true){location.reload();}}, 100);
+      //alert("Você perdeu! :( Sua pontuação foi: " + metros);
+      setTimeout(function () {location.reload();}, 400);
+      location.reload();
+      
+      //condicao = window.confirm("você deseja recomeçar o jogo?");
+      //if(condicao==true){location.reload();}
+      //setTimeout(function () { location.reload();}, 100);
+      
 
     }
   }
 
+//Após o skier colidir com algum obstaculo, essa função é chamada para remover o obstaculo. Decidimos criar para Evitar alguns bugs
   function removeObstaculosDaMontanha(a) {
     montanha.element.removeChild(a.element);
     a.element = null;
@@ -180,6 +196,7 @@
     vetorObstaculos.splice(index, 1);
   }
 
+ //Função que verifica se houve uma colisão 
   function colisao() {
     vetorObstaculos.forEach(function (a) {
       var topArv = parseInt(a.element.style.top);
@@ -194,12 +211,12 @@
       if ((topArv < (topSkier + heightSkier)) && (topArv > topSkier)) {
         if ((leftArv < (leftSkier + widthSkier)) && ((leftArv + widthArv) > leftSkier)) {
           if (a.element.className == 'cogumelo') {
-            vidas+=1;
+            vidas += 1;
             removeObstaculosDaMontanha(a);
           } else {
             skier.element.className = 'colisao';
             setTimeout(function () { skier.element.className = 'para-frente'; }, 200);
-            vidas-=1;
+            vidas -= 1;
             removeObstaculosDaMontanha(a);
             verificaVida();
           }
@@ -208,9 +225,10 @@
     });
   }
 
+  //Função que movimenta os obstaculos, após o obstaculo passar pelo limite, ele é excluido. Serve para otimizar o jogo
   function andaObstaculo() {
     vetorObstaculos.forEach(function (a) {
-      if (parseInt(a.element.style.top) > 34) {
+      if (parseInt(a.element.style.top) > 30) {
         a.element.style.top = (parseInt(a.element.style.top) - 1) + "px";
       } else {
         montanha.element.removeChild(a.element);
