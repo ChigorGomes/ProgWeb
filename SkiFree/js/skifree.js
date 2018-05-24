@@ -2,9 +2,9 @@
   var metros = 0;
   var vidas = 3;
   const FPS = 50;
-  const FPS2 = 33.333333333; //33 correto.
-  const TAMX = 300; //300
-  const TAMY = 400;
+  const FPS2 = 150;//33.333333333; //33 correto.
+  const TAMX = 350; //300
+  const TAMY = 450;
   const PROB_OBSTACULOS = 5;
   var gameLoop;
   var montanha;
@@ -110,7 +110,7 @@
     this.andar = function () {
       if (parseInt(this.element.style.left) > 0 && this.direcao == 0) {
         this.element.style.left = (parseInt(this.element.style.left) - 1) + "px";
-      } if (parseInt(this.element.style.left) < 285 && this.direcao == 2) {
+      } if (parseInt(this.element.style.left) < 328 && this.direcao == 2) {
         this.element.style.left = (parseInt(this.element.style.left) + 1) + "px";
       }
     }
@@ -127,8 +127,16 @@
     this.element.style.height = xheight + 'px';
   }
 
+  function ganhaVida() {
+    var random = Math.floor(Math.random() * 7000); //1000
+    if (random < PROB_OBSTACULOS ) {
+      obstaculo = new criaObstaculos('cogumelo', 10, 12);
+      vetorObstaculos.push(obstaculo);
+    }
+  }
+
   function randomCriaObstaculos() {
-    var random = Math.floor(Math.random() * 1000); //1000
+    var random = Math.floor(Math.random() * 400); //1000
     if (random <= PROB_OBSTACULOS * 3) { //10
       var randomObstaculos = parseInt(Math.floor(Math.random() * 5) + 1); //10
       switch (randomObstaculos) {
@@ -148,18 +156,18 @@
           obstaculo = new criaObstaculos('rocha', 28, 13); // Criando Rocha
           vetorObstaculos.push(obstaculo);
           break;
-        //case 5:
-        //obstaculo = new criaObstaculos('cogumelo', 10, 12); // Criando Cogumelo
-        //vetorObstaculos.push(obstaculo);
-        //break;
+        case 5:
+          obstaculo = new criaObstaculos('arvoregrande', 33, 64); // Criando Cogumelo
+          vetorObstaculos.push(obstaculo);
+          break;
       }
     }
   }
 
   function verificaVida() {
     if (vidas <= 0) {
-      this.element = document.getElementById("skier");
-      setTimeout(function () { this.element.className = 'gameover'; }, 5);
+      //setTimeout(function () { skier.element.className = 'gameover'; }, 5);
+      skier.element.className = 'gameover';
       setTimeout(function () { condicao = window.confirm("você deseja recomeçar o jogo?"); if (condicao) location.reload(); }, 100);
 
     }
@@ -170,7 +178,6 @@
     a.element = null;
     var index = vetorObstaculos.indexOf(a);
     vetorObstaculos.splice(index, 1);
-    init();
   }
 
   function colisao() {
@@ -187,15 +194,14 @@
       if ((topArv < (topSkier + heightSkier)) && (topArv > topSkier)) {
         if ((leftArv < (leftSkier + widthSkier)) && ((leftArv + widthArv) > leftSkier)) {
           if (a.element.className == 'cogumelo') {
-            vidas++;
+            vidas+=1;
             removeObstaculosDaMontanha(a);
           } else {
-            this.element = document.getElementById("skier");
-            setTimeout(function () { this.element.className = 'colisao'; }, 20);
-            vidas--;
+            skier.element.className = 'colisao';
+            setTimeout(function () { skier.element.className = 'para-frente'; }, 200);
+            vidas-=1;
             removeObstaculosDaMontanha(a);
             verificaVida();
-            setTimeout(function () { this.element.className = 'para-frente'; }, 300);
           }
         }
       }
@@ -216,6 +222,7 @@
 
   function run() {
     randomCriaObstaculos();
+    ganhaVida();
     andaObstaculo();
     verificaVida();
     metros = Metros()(parseInt(gameLoop));
@@ -227,3 +234,4 @@
   Placar(metros);
 
 })();
+

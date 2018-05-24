@@ -49,18 +49,19 @@
 }
 
 #placar{
-    border: 1px solid black;
-    width: 200px;
+    border: 3px solid black;
+    width: 150px;
     height: 150px;
     position: absolute;
     top: 10px;
-    left: 320px;
+    left: 380px;
     background-color: transparent;
-    box-shadow: 2px 2px 2px 2px black;
+    font-size: 15px;
+   /* box-shadow: 2px 2px 2px 2px black;*/
 }
 
 #montanha {
-    border: 1px solid black;
+    border: 3px solid black;
     position: relative;
     overflow: hidden;    
 }
