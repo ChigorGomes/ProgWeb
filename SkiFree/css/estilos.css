@@ -7,7 +7,7 @@ h1{
     color:rgb(4, 5, 235);
     font-style: italic;
     position: absolute;
-    left: 600px;
+    left: 550px;
     top: 40px; 
 }
 span{
@@ -68,7 +68,7 @@ span{
     position: absolute;
     padding: 3px;
     top: 280px; /**/
-    left: 820px;
+    left: 770px;
     background-color: beige;
     font-size: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -84,7 +84,7 @@ span{
     position: absolute;
     padding: 3px;
     top: 110px;
-    left: 820px;
+    left: 770px;
     background-color: beige;
     font-size: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -122,14 +122,16 @@ span{
     height: 500px;
     top: 50px;
     position: absolute;
+    left: -10px;
 }
 
 #img2{
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     top: 20px;
-    left: 850px;
+    left: 710px;
     position: absolute;
+    
 }
 
 #montanha {
@@ -138,7 +140,7 @@ span{
     overflow: hidden; 
     /**/
     top: 100px;
-    left: 500px;
+    left: 450px;
 
 }
 
