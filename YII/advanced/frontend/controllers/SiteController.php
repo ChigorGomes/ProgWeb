@@ -138,9 +138,11 @@ class SiteController extends Controller
      *
      * @return mixed
      */
+    /*Modificado*/
     public function actionAbout()
     {
-        return $this->render('about');
+        $data = "Dia e Hora Atual: ". date("d/m/Y H:i:s" );
+        return $this->render('about', ['data'=>$data]);
     }
 
     /**
