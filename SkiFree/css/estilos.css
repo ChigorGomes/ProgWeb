@@ -1,3 +1,4 @@
+
 #skier {
     position: absolute;
 }
@@ -6,8 +7,8 @@ h1{
     color:rgb(4, 5, 235);
     font-style: italic;
     position: absolute;
-    left: 110px;
-    top: 400px; 
+    left: 600px;
+    top: 40px; 
 }
 span{
     color:rgb(177, 183, 25);
@@ -66,26 +67,85 @@ span{
     height: 150px;
     position: absolute;
     padding: 3px;
-    top: 10px;
-    left: 320px;
+    top: 280px; /**/
+    left: 820px;
+    background-color: beige;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   
+
+
+}
+
+#controle{
+    border: 3px solid black;
+    width: 130px;
+    height: 150px;
+    position: absolute;
+    padding: 3px;
+    top: 110px;
+    left: 820px;
     background-color: beige;
     font-size: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 
+}
+#esq{
+    position: relative;
+    left: 40px;
+    top: -10px;
+}
+#dir{
+    position: relative;
+    left: 45px;
+    top: -10px;
+}
 
+#f{
+    position: relative;
+    left: 5px;
+    top: 60px;
+}
+#aumenta{
+    position: relative;
+    text-align: center;
+    top: -20px;
+}
+
+#texto{
+    text-align: center;
+}
+
+#img1{
+    width: 500px;
+    height: 500px;
+    top: 50px;
+    position: absolute;
+}
+
+#img2{
+    width: 500px;
+    height: 500px;
+    top: 20px;
+    left: 850px;
+    position: absolute;
 }
 
 #montanha {
     border: 3px solid black;
     position: relative;
-    overflow: hidden;
+    overflow: hidden; 
+    /**/
+    top: 100px;
+    left: 500px;
+
 }
 
 .arvore {
     background-image: url(obstacles.png);
     background-position: -0px -31px;
-    position: absolute;
+    position: absolute; 
 }
 
 .chama {

@@ -258,7 +258,7 @@
   //gera cachorros aleatorios
   function geraCachorro() {
     var random = Math.floor(Math.random() * 7000);
-    if (random < PROB_OBSTACULOS * 5) {
+    if (random < PROB_OBSTACULOS * 3) {
       cachorro = new criaObstaculos('cachorro', 25, 19);
       cachorro.element.style.top = 250 + 'px';
       cachorro.element.style.left = 0 + 'px';
