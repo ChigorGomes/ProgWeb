@@ -1,12 +1,6 @@
 /*                                    NOME: CÍCERO HIGOR GOMES DE SOUSA
                                             MATRICULA: 21550190
                                             
-  COLABORADORES:  FRANCIELISON M. RIBEIRO
-                  ANDRE FELIPE COSTA
-                  MATEUS MEDEIROS DE SOUZA 
-
-
-
                                                   SKIFREE
 */
 
