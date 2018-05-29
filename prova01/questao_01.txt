@@ -1,3 +1,6 @@
+Todos os erros foram identificados corretamente.
+Nota: 2.0
+
 1ºErro
 
 --- linha 04 " /*Isto é um comentário e não deve aparecer na página*/ " 

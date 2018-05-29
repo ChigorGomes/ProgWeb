@@ -1,3 +1,6 @@
+Conceito de hoisting e código corretos.
+Nota: 2.0
+
 hoisting é quando eu tenho acesso ao conteúdo de uma váriavel antes  que ela seja declarada.
 O javascript permite isso no exemplo abaixo ele mostra o valor 1 dá variável antes que ela seja declarada logo abaixo
 
