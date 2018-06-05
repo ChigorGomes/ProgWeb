@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 30/05/2018 às 20:54
+-- Tempo de geração: 05/06/2018 às 18:55
 -- Versão do servidor: 5.7.22-0ubuntu0.16.04.1
 -- Versão do PHP: 7.0.30-0ubuntu0.16.04.1
 
@@ -34,6 +34,13 @@ CREATE TABLE `curso` (
   `sigla` char(4) COLLATE utf8_bin NOT NULL,
   `descricao` text COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Fazendo dump de dados para tabela `curso`
+--
+
+INSERT INTO `curso` (`id`, `nome`, `sigla`, `descricao`) VALUES
+(1, 'Ciência da Computação', 'IE08', 'O curso de Bacharelado em Ciência da Computação é resultado de um processo de consolidação do ensino e pesquisa em Ciência da Computação no norte do país, estando em consonância com as diretrizes estabelecidas pelo Ministério da Educação - MEC, também atendendo à Nova lei de Diretrizes e Bases da Educação Brasileira.');
 
 -- --------------------------------------------------------
 
@@ -127,7 +134,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de tabela `curso`
 --
 ALTER TABLE `curso`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `jogada`
@@ -155,7 +162,7 @@ ALTER TABLE `jogada`
 -- Restrições para tabelas `user`
 --
 ALTER TABLE `user`
-  ADD CONSTRAINT `fk_curso` FOREIGN KEY (`id_curso`) REFERENCES `curso` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_curso` FOREIGN KEY (`id_curso`) REFERENCES `curso` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
