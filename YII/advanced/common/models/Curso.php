@@ -28,12 +28,17 @@ class Curso extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'sigla', 'descricao'], 'required','message'=>'Este campo é obrigatório'],
+            [['nome', 'sigla', 'descricao'], 'required','message'=>'Este campo é obrigatório!'],
             [['descricao'], 'string'],
             [['nome'], 'string', 'max' => 45],
             [['sigla'], 'string', 'max' => 4],
         ];
     }
+
+    public function getUsers(){
+        return $this->hasMany(Users::className(),['id_curso'=>'id']);
+    }
+
 
     /**
      * {@inheritdoc}
@@ -42,9 +47,9 @@ class Curso extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'nome' => 'Nome',
+            'nome' => 'Nome do Curso',
             'sigla' => 'Sigla',
-            'descricao' => 'Descricao',
+            'descricao' => 'Descrição',
         ];
     }
 }

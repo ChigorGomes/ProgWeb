@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Você deseja realmente excluir esse item?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -31,13 +31,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'username',
             'auth_key',
-            'password_hash',
-            'password_reset_token',
+            //'password_hash',
+            //'password_reset_token',
             'email:email',
-            'id_curso',
+            ['label'=>'Curso','value'=>$model->curso->nome,],
+            //'id_curso',
             'status',
-            'created_at',
-            'updated_at',
+            //'created_at',
+            //'updated_at',
         ],
     ]) ?>
 
