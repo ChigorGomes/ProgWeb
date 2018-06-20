@@ -9,6 +9,7 @@ use yii\widgets\DetailView;
 $this->title = $model->nome;
 $this->params['breadcrumbs'][] = ['label' => 'Cursos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+$this->registerCss('th{text-align:right;}'); //mudar para outro posicao
 ?>
 <div class="curso-view">
 
@@ -19,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Deletar', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Você deseja realmente?',
+                'confirm' => 'Você deseja realmente excluir?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -28,7 +29,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
             'nome',
             'sigla',
             'descricao:ntext',

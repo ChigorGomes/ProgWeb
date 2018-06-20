@@ -11,6 +11,7 @@ use Yii;
  * @property string $nome
  * @property string $sigla
  * @property string $descricao
+ * 
  */
 class Curso extends \yii\db\ActiveRecord
 {
@@ -39,6 +40,13 @@ class Curso extends \yii\db\ActiveRecord
         return $this->hasMany(Users::className(),['id_curso'=>'id']);
     }
 
+    //transforma em maiuscula
+    public function beforeSave($tipo){
+        $this->sigla = strtoupper($this->sigla);
+        return parent::beforeSave($tipo);
+
+    }
+
 
     /**
      * {@inheritdoc}
@@ -47,7 +55,7 @@ class Curso extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'nome' => 'Nome do Curso',
+            'nome' => 'Nome',
             'sigla' => 'Sigla',
             'descricao' => 'Descrição',
         ];

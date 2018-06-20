@@ -186,6 +186,13 @@ class User extends ActiveRecord implements IdentityInterface
         $this->password_reset_token = Yii::$app->security->generateRandomString() . '_' . time();
     }
 
+
+    //mudar a data
+    public function afterFind(){
+        return $this->created_at= date("m/d/Y H:i",$this->created_at);
+    }
+    
+
     /**
      * Removes password reset token
      */

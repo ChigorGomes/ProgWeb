@@ -12,6 +12,10 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use common\models\Curso;
+
+
+use yii\helpers\ArrayHelper;
 
 /**
  * Site controller
@@ -120,9 +124,9 @@ class SiteController extends Controller
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
+                Yii::$app->session->setFlash('success', 'Obrigado por nos contatar. Nós responderemos a você o mais breve possível.');
             } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending your message.');
+                Yii::$app->session->setFlash('error', 'Houve um erro ao enviar a sua mensagem.');
             }
 
             return $this->refresh();
@@ -153,6 +157,9 @@ class SiteController extends Controller
     public function actionSignup()
     {
         $model = new SignupForm();
+        $cursos= Curso::find()->all(); //recuperar todos os cursos;
+        $cursosarray= ArrayHelper::map($cursos,'id','nome');
+        
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
@@ -163,6 +170,7 @@ class SiteController extends Controller
 
         return $this->render('signup', [
             'model' => $model,
+            'cursosarray'=>$cursosarray,
         ]);
     }
 
@@ -176,7 +184,7 @@ class SiteController extends Controller
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
-                Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
+                Yii::$app->session->setFlash('success', 'Verifique seu e-mail para mais instruções.');
 
                 return $this->goHome();
             } else {
