@@ -3,12 +3,20 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
+
 /* @var $this yii\web\View */
 /* @var $model common\models\User */
 
 $this->title = $model->username;
 $this->params['breadcrumbs'][] = ['label' => 'Usuário', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+$this->registerCss('th{text-align:right;}'); //mudar para outro posicao
+
+ 
+
+
+
 ?>
 <div class="user-view">
 
@@ -28,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+            //'id',
             'username',
             //'auth_key',
             //'password_hash',

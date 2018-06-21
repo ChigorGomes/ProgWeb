@@ -190,8 +190,10 @@ class User extends ActiveRecord implements IdentityInterface
     //mudar a data
     public function afterFind(){
         return $this->created_at= date("m/d/Y H:i",$this->created_at);
+          //transforma em maiuscula
     }
     
+
 
     /**
      * Removes password reset token
@@ -200,4 +202,20 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+
+      /**
+       * Transforma a labbel em português
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'username' => 'Nome',
+            'created_at'=>'Criado em',
+        ];
+    }
+
+
+
+
 }

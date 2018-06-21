@@ -47,6 +47,8 @@ class SignupForm extends Model
     public function attributeLabels(){
         return [
             'id_curso'=> 'Selecione seu curso',
+            'username' => 'Usuário',
+            'password' => 'Senha',
         ];
     }
     /**

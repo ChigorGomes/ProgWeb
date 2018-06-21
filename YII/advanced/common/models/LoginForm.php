@@ -75,4 +75,18 @@ class LoginForm extends Model
 
         return $this->_user;
     }
+
+
+       /**
+       * Transforma a labbel em português
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'username' => 'Usuário',
+            'password'=>'Senha',
+            'rememberMe'=>'Lembrar-me',
+        ];
+    }
 }

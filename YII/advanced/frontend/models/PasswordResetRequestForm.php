@@ -20,7 +20,7 @@ class PasswordResetRequestForm extends Model
     {
         return [
             ['email', 'trim'],
-            ['email', 'required'],
+            ['email', 'required','message'=>'Este campo é obrigatório!',],
             ['email', 'email'],
             ['email', 'exist',
                 'targetClass' => '\common\models\User',

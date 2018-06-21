@@ -17,6 +17,10 @@ class ContactForm extends Model
     public $verifyCode;
 
 
+    
+   
+
+
     /**
      * {@inheritdoc}
      */
@@ -39,6 +43,9 @@ class ContactForm extends Model
     {
         return [
             'verifyCode' => 'Verificação de código',
+            'name' => 'Nome',
+            'subject' => 'Sujeito',
+            'body' => 'Mensagem',
         ];
     }
 
