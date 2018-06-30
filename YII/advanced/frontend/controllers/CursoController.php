@@ -121,7 +121,7 @@ class CursoController extends Controller
         if (($model = Curso::findOne($id)) !== null) {
             return $model;
         }
+        return Curso::findOne(1);//retorna ciencia da computação
 
-        throw new NotFoundHttpException('The requested page does not exist.');
     }
 }

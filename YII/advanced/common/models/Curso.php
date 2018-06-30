@@ -11,6 +11,8 @@ use Yii;
  * @property string $nome
  * @property string $sigla
  * @property string $descricao
+ *
+ * 
  * 
  */
 class Curso extends \yii\db\ActiveRecord
@@ -60,4 +62,9 @@ class Curso extends \yii\db\ActiveRecord
             'descricao' => 'Descrição',
         ];
     }
+
+    /*Função que retorna a quantidade de alunos*/ 
+    public function contUsuarios(){
+        return User::find()->where(['id_curso'=>$this->id])->count();
+    } 
 }

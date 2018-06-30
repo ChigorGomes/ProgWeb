@@ -9,7 +9,7 @@ use yii\widgets\DetailView;
 $this->title = $model->nome;
 $this->params['breadcrumbs'][] = ['label' => 'Cursos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
-$this->registerCss('th{text-align:right;}'); //mudar para outro posicao
+//$this->registerCss('th{text-align:right;}'); //mudar para outro posicao
 ?>
 <div class="curso-view">
 
@@ -32,6 +32,9 @@ $this->registerCss('th{text-align:right;}'); //mudar para outro posicao
             'nome',
             'sigla',
             'descricao:ntext',
+            ['label'=>'Número de Alunos',
+            'value'=>$model->contUsuarios()
+            ]
         ],
     ]) ?>
 

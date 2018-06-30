@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'password_hash',
             //'password_reset_token',
             'email:email',
-            'id_curso', // mudar para o nome do curso
+            //'id_curso', // mudar para o nome do curso
             'status',
             'created_at',
             //'updated_at',
