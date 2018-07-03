@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 05/06/2018 às 18:55
+-- Tempo de geração: 03/07/2018 às 14:38
 -- Versão do servidor: 5.7.22-0ubuntu0.16.04.1
 -- Versão do PHP: 7.0.30-0ubuntu0.16.04.1
 
@@ -40,7 +40,8 @@ CREATE TABLE `curso` (
 --
 
 INSERT INTO `curso` (`id`, `nome`, `sigla`, `descricao`) VALUES
-(1, 'Ciência da Computação', 'IE08', 'O curso de Bacharelado em Ciência da Computação é resultado de um processo de consolidação do ensino e pesquisa em Ciência da Computação no norte do país, estando em consonância com as diretrizes estabelecidas pelo Ministério da Educação - MEC, também atendendo à Nova lei de Diretrizes e Bases da Educação Brasileira.');
+(1, 'Ciência da Computação', 'IE08', 'O curso de Bacharelado em Ciência da Computação é resultado de um processo de consolidação do ensino e pesquisa em Ciência da Computação no norte do país, estando em consonância com as diretrizes estabelecidas pelo Ministério da Educação - MEC, também atendendo à Nova lei de Diretrizes e Bases da Educação Brasileira.'),
+(2, 'Engenharia de Software', 'IE17', 'O curso de Bacharelado em Engenharia de Software apresenta direcionamentos que possibilitam a formação de um profissional capaz de conduzir o processo de desenvolvimento de software para atender diversas demandas em diferentes domínios que requeiram solução computacional, levando em consideração as capacidades dos seres humanos e das máquinas, balizado pelos custos envolvidos e impactos sobre a sociedade. Esta atuação dá-se através de metodologias e técnicas destinadas a projetar, modelar, analisar e resolver problemas com competência, criatividade, senso crítico e ética.');
 
 -- --------------------------------------------------------
 
@@ -52,8 +53,15 @@ CREATE TABLE `jogada` (
   `id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `pontuacao` int(11) NOT NULL,
-  `data_hora` varchar(45) COLLATE utf8_bin NOT NULL
+  `data_hora` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Fazendo dump de dados para tabela `jogada`
+--
+
+INSERT INTO `jogada` (`id`, `id_user`, `pontuacao`, `data_hora`) VALUES
+(1, 2, 555, '2018-06-20 13:58:48');
 
 -- --------------------------------------------------------
 
@@ -87,11 +95,20 @@ CREATE TABLE `user` (
   `password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password_reset_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `id_curso` int(11) NOT NULL,
+  `id_curso` int(11) DEFAULT NULL,
   `status` smallint(6) NOT NULL DEFAULT '10',
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Fazendo dump de dados para tabela `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `id_curso`, `status`, `created_at`, `updated_at`) VALUES
+(2, 'Maria', 'BgFpOcEOVb88Ie-Ny30E9J8rJ8xIEYpL', '$2y$13$FX8/kt6jWp.nGmUK6esfiuT4S7tdD449LRs8wQiMvNTtaDGUt2OIW', NULL, 'maria@gmail.com', 1, 10, 6, 1530639232),
+(4, 'cicero', '7QdACWc_v4ll6JoQeLuYur-o1NCHtGQ0', '$2y$13$ZtahG3TU7Bjcu2VGcimI3uVVIzarHboau6o1Xkv8YDqz8rT6yi062', NULL, 'higorgomesousa@gmail.com', 1, 10, 1530639339, 1530639339),
+(5, 'fernando', 'nwQEaNvtQ_CWNLrCrd2__oXVqa5oOiZi', '$2y$13$HEWUbmOBLemTzd7Djv6xqOOK4fPJ3shpBQUV6VhsepuOIHsHgxLpq', NULL, 'fernando@gmail.com', 2, 10, 1530639367, 1530639367);
 
 --
 -- Índices de tabelas apagadas
@@ -134,19 +151,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de tabela `curso`
 --
 ALTER TABLE `curso`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `jogada`
 --
 ALTER TABLE `jogada`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restrições para dumps de tabelas
