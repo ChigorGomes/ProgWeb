@@ -1,6 +1,7 @@
 
 <?php
 use yii\helpers\Html;
+use yii\helpers\Url;
 /* @var $this yii\web\View */
 
 $this->title = 'Skifree';
@@ -18,7 +19,7 @@ $this->title = 'Skifree';
         16-bit do sistema operacional, mas depois sumiu pela falta de compatibilidade com as versões sucessoras, que apresentavam 
         32-bit.</p>
 
-        <p><a class="btn btn-lg btn-success" href="http://localhost/ProgWeb/YII/advanced/frontend/web/SkiFree/">Iniciar jogo!</a></p>
+        <p><a class="btn btn-lg btn-success" href=" <?= Url::to(['jogo/index']) ?>">Iniciar jogo! </a></p>
     </div>
 
     
